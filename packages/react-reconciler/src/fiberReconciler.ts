@@ -1,9 +1,10 @@
-import { FiberNode, FiberRootNode } from './fiber';
-import { HostRoot } from './workTags';
-import { createUpdate, createUpdateQueue, enqueueUpdate } from './updateQueue';
 import type { Container } from 'hostConfig';
 import type { ReactElement } from 'shared/ReactTypes';
+
+import { FiberNode, FiberRootNode } from './fiber';
+import { createUpdate, createUpdateQueue, enqueueUpdate } from './updateQueue';
 import { scheduleUpdateOnFiber } from './workLoop';
+import { HostRoot } from './workTags';
 
 /**
  * createRoot 会执行 createContainer

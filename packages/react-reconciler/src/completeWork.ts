@@ -1,4 +1,5 @@
 import { appendInitialChild, createInstance } from 'hostConfig';
+
 import type { FiberNode } from './fiber';
 import { HostComponent, HostRoot, HostText } from './workTags';
 
@@ -10,7 +11,7 @@ import { HostComponent, HostRoot, HostText } from './workTags';
 export const completeWork = (wip: FiberNode) => {
   const newProps = wip.pendingProps;
   const current = wip.alternate;
-
+ 
   switch (wip.tag) {
     case HostRoot:
       return null;

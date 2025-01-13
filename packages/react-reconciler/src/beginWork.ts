@@ -1,8 +1,9 @@
 import type { ReactElement } from 'shared/ReactTypes';
+
+import { mountChildFibers, reconcileChildFibers } from './childFibers'; 
 import type { FiberNode } from './fiber';
 import { processUpdateQueue, type UpdateQueue } from './updateQueue';
 import { HostComponent, HostRoot, HostText } from './workTags';
-import { mountChildFibers, reconcileChildFibers } from './childFibers';
 
 /**
  * 当前节点的递阶段，开始处理当前节点，返回当前节点的子 Fiber 或 null

@@ -1,8 +1,9 @@
-import type { ReactElement } from 'shared/ReactTypes';
-import { createFiberFromElement, FiberNode } from './fiber';
-import { HostText } from './workTags';
 import { REACT_ELEMENT_TYPE } from 'shared/ReactSymbols';
+import type { ReactElement } from 'shared/ReactTypes';
+
+import { createFiberFromElement, FiberNode } from './fiber';
 import { Placement } from './fiberFlags';
+import { HostText } from './workTags';
 
 const childReconciler = (shouldTrackEffects: boolean) => {
   const reconcileSingleElement = (returnFiber: FiberNode, currentFiber: FiberNode | null, element: ReactElement) => {
@@ -12,7 +13,7 @@ const childReconciler = (shouldTrackEffects: boolean) => {
   };
 
   const reconcileSingleTextNode = (
-    returnFiber: FiberNode,
+    returnFiber: FiberNode, 
     currentFiber: FiberNode | null,
     content: string | number
   ) => {

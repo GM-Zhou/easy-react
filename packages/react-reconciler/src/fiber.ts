@@ -1,12 +1,12 @@
 import type { Container } from 'hostConfig';
-import type { Key, Props, ReactElement,Ref } from 'shared/ReactTypes';
+import type { Key, Props, ReactElement, Ref } from 'shared/ReactTypes';
 
-import { type Flags,NoFlags } from './fiberFlags';
+import { type Flags, NoFlags } from './fiberFlags';
 import { FunctionComponent, HostComponent, type WorkTag } from './workTags';
 
 /**
  * FiberNode 类
- * 保存 React DOM 渲染过程中的一些信息 
+ * 保存 React DOM 渲染过程中的一些信息
  * 包含当前节点的信息和父节点的信息
  * 可以看作 React 的一个虚拟 DOM 节点
  * 除了作为一个节点的实例，保存了节点的类型和属性，还保存了工作流程中的一些信息，也描述了与其他节点的关系
