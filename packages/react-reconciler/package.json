@@ -1,0 +1,6 @@
+{
+  "name": "react-reconciler",
+  "description": "react 协调器",
+  "module": "index.ts",
+  "type": "module"
+}

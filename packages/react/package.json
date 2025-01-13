@@ -1,0 +1,7 @@
+{
+  "name": "react",
+  "version": "0.0.1",
+  "description": "react 公共方法",
+  "module": "index.ts",
+  "type": "module"
+}

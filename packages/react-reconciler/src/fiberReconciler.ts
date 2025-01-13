@@ -1,0 +1,27 @@
+import { FiberNode, FiberRootNode } from './fiber';
+import { HostRoot } from './workTags';
+import { createUpdate, createUpdateQueue, enqueueUpdate } from './updateQueue';
+import type { Container } from 'hostConfig';
+import type { ReactElement } from 'shared/ReactTypes';
+import { scheduleUpdateOnFiber } from './workLoop';
+
+/**
+ * createRoot 会执行 createContainer
+ */
+export const createContainer = (container: Container) => {
+  const hostRootFiber = new FiberNode(HostRoot, {}, null);
+  const fiberRoot = new FiberRootNode(container, hostRootFiber);
+  hostRootFiber.updateQueue = createUpdateQueue();
+  return fiberRoot;
+};
+
+/**
+ * createRoot().render 会执行 updateContainer
+ */
+export const updateContainer = (element: ReactElement | null, root: FiberRootNode) => {
+  const hostRootFiber = root.current;
+  const update = createUpdate(element);
+  enqueueUpdate(hostRootFiber.updateQueue, update);
+  scheduleUpdateOnFiber(hostRootFiber);
+  return element;
+};
