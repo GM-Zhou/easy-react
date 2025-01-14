@@ -1,6 +1,6 @@
 import type { ReactElement } from 'shared/ReactTypes';
 
-import { mountChildFibers, reconcileChildFibers } from './childFibers'; 
+import { mountChildFibers, reconcileChildFibers } from './childFibers';
 import type { FiberNode } from './fiber';
 import { processUpdateQueue, type UpdateQueue } from './updateQueue';
 import { HostComponent, HostRoot, HostText } from './workTags';
